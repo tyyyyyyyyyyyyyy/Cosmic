@@ -10,7 +10,8 @@ const client = new Client({
 
 // Collections
 client.config = require("./config.json");
-client.events = new Collection()
+client.events = new Collection();
+client.commands = new Collection();
 
 // Functions
 const { loadEvents } = require("./Handlers/eventHandler");
