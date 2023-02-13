@@ -28,3 +28,5 @@ async function loadEvents(client){
 
     return console.log(table.toString(), "\nLoaded Events!")
 };
+
+module.exports = { loadEvents }
