@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/tyyyyyyyyyyyyyy/Cosmic#readme",
   "dependencies": {
-    "discord.js": "^14.7.1"
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.7.1",
+    "glob": "^8.1.0"
   }
 }
