@@ -12,9 +12,11 @@ const client = new Client({
 client.config = require("./config.json");
 client.events = new Collection();
 client.commands = new Collection();
+client.buttons = new Collection();
 
 // Functions
 const { loadEvents } = require("./Handlers/eventHandler");
+
 loadEvents(client);
 
 // Login to bot!

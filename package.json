@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tyyyyyyyyyyyyyy/Cosmic#readme",
   "dependencies": {
     "ascii-table": "^0.0.9",
+    "chalk": "^5.2.0",
     "discord.js": "^14.7.1",
     "generate-password": "^1.7.0",
     "glob": "^8.1.0"
