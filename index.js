@@ -21,5 +21,3 @@ loadEvents(client);
 
 // Login to bot!
 client.login(client.config.token);
-
-// bot invite = https://discord.com/api/oauth2/authorize?client_id=1072237160247328898&permissions=8&scope=bot 
