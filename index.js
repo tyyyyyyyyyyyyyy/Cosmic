@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, Partials, Collection, Guild} = require("discord.js");
-const { Guilds, GuildMembers, GuildMessages} = GatewayIntentBits;
+const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
 const { User, Message, GuildMember, ThreadMember} = Partials
 
 // Initiate the client
