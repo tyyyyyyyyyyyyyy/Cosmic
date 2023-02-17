@@ -1,6 +1,7 @@
 const { ChatInputCommandInteraction, SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, Client } = require("discord.js");
 const { loadCommands } = require("../../Handlers/commandHandler");
 const { loadEvents } = require("../../Handlers/eventHandler");
+const { loadButtons } = require("../../Handlers/buttonHandler");
 
 module.exports= {
     developer: true,
@@ -14,6 +15,9 @@ module.exports= {
     .addSubcommand((options) => options
     .setName("commands")
     .setDescription("Reload your commands"))
+    .addSubcommand((options) => options
+    .setName("buttons")
+    .setDescription("Reload your buttons"))
     .addSubcommand((options) => options
     .setName("everything")
     .setDescription("Reload commands and events")),
@@ -37,12 +41,18 @@ module.exports= {
                 interaction.reply({ content: "Reloaded Commands!", ephemeral: true})
             }
             break;
+            case "buttons" : {
+                loadButtons(client);
+                interaction.reply({ content: "Reloaded buttons!", ephemeral: true})
+            }
+            break;
             case "everything" : {
                 for(const [key, value] of client.events)
                 client.removeListener(`${key}`, value, true);
                 loadEvents(client)
                 loadCommands(client);
-                interaction.reply({ content: "Reloaded commands and events!", ephemeral: true });
+                loadButtons(client);
+                interaction.reply({ content: "Reloaded everything!", ephemeral: true });
             }
         }
     }
