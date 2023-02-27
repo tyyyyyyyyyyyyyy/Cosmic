@@ -8,6 +8,7 @@ module.exports = {
      */
     execute(interaction, client){
         if(!interaction.isChatInputCommand()) return;
+        if(interaction.isAnySelectMenu()) return;
 
         const command = client.commands.get(interaction.command.name);
         if(!command) return interaction.reply({ content: "This command is outdated!", ephemeral: true });

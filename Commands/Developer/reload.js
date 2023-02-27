@@ -4,6 +4,7 @@ const { loadEvents } = require("../../Handlers/eventHandler");
 const { loadButtons } = require("../../Handlers/buttonHandler");
 
 module.exports= {
+    category: "Developer",
     developer: true,
     data: new SlashCommandBuilder()
     .setName("reload")

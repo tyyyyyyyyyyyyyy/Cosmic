@@ -1,6 +1,7 @@
 const { ChatInputCommandInteraction, SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, Client } = require("discord.js");
 
 module.exports= {
+    category: "Developer",
     developer: true,
     data: new SlashCommandBuilder()
     .setName("announce")

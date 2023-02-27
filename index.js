@@ -13,11 +13,14 @@ client.config = require("./config.json");
 client.events = new Collection();
 client.commands = new Collection();
 client.buttons = new Collection();
+client.selectMenus = new Collection();
 
 // Functions
 const { loadEvents } = require("./Handlers/eventHandler");
+const { loadSelectMenus } = require("./Handlers/selectMenuHandler");
 
 loadEvents(client);
+loadSelectMenus(client);
 
 // Login to bot!
 client.login(client.config.token);
