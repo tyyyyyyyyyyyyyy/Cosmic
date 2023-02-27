@@ -25,7 +25,7 @@ module.exports= {
             .setAuthor({ name: `📢 Announcement!`, iconURL: `${client.user.avatarURL()}`})
             .setDescription("**Please read below!**")
             .addFields({
-                name: `Announcement from: ${interaction.user.username}`, value: "```"+announcement+"```"
+                name: `Announcement from: ${interaction.user.username}`, value: `${announcement}`
             })
             .setColor("#083c6c")
         ]}).then(() => {
