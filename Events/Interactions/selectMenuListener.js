@@ -3,7 +3,7 @@ const { EmbedBuilder } = require("discord.js");
 module.exports = {
   name: "interactionCreate",
     async execute(interaction, client) {
-    if (!interaction.isSelectMenu()) return;
+    if (!interaction.isAnySelectMenu()) return;
   
     const selectMenu = client.selectMenus.get(interaction.customId);
 

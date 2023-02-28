@@ -27,15 +27,12 @@ module.exports = {
         .setDescription("Click from the selections below to get a list of commands in that category!")
         .setColor("#083c6c")
 
-        const options = [];
-        categories.forEach(cat => {
-            options.push({
-                label: cat,
-                value: `help-${cat}`,
-                description: `View commands in ${cat} category`,
-                emoji: cat.emoji,
-              });
-        })
+        const options = categories.map(cat => ({
+            label: cat,
+            value: `help-${cat}`,
+            description: `View commands in ${cat} category`,
+            emoji: cat.emoji,
+          }));
 
         const row = new ActionRowBuilder().addComponents(new StringSelectMenuBuilder()
         .setCustomId("help")

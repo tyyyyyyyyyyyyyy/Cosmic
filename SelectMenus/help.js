@@ -17,18 +17,26 @@ module.exports = {
 
     const commands = client.commands;
 
-    const addFields = async () => {
-        for ( const cmd of commands){
-            console.log(cmd.category)
-            // console.log(interaction.values[0].replace('help-', ''))
-            if(cmd.category == interaction.values[0].replace('help-','')){
-                const cmds = await client.application.commands.fetch();
-                const cmdid = cmds.find(c => c.name == cmd.data.name).id;
-                embed.addFields({ name: `</${cmd.data.name}:${cmdid}>`, value: `${cmd.data.description}`});
-            }
-        }
+    const chosenCategory = interaction.values[0].replace('help-', '');
+    console.log(chosenCategory)
+    const commandsToAdd = []
+    commands.forEach(element => {
+      if(element.category == chosenCategory){
+        commandsToAdd.push({ name: element.data.name, description: element.data.description, developer: element.developer })
+      }
+    });
+    for( const command of commandsToAdd) {
+      const cmds = await client.application.commands.fetch();
+      const cmdid = cmds.find(c => c.name = command.name);
+      embed.addFields({
+        name: `</${command.name}:${cmdid.id}> ${(command.developer) ? "👩‍💻"  : "🟢"}` ,
+        value: command.description
+      })
+      // embed.addFields({
+      //   name: `**/${cmd.name}** ${(cmd.developer) ? "👩‍💻"  : "🟢"}` ,
+      //   value: cmd.description
+      // })
     }
-    await addFields();
     interaction.update({ embeds: [embed] });
   },
 };
