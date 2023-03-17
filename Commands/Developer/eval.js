@@ -43,7 +43,7 @@ module.exports= {
                         }
                     )
                     .setColor("#083c6c")
-                    .setFooter("Reminder, this command is only JS.")
+                    .setFooter({ text: "Reminder, this command is only JS." })
                 ]})
             }
             const evaled = eval(code);
@@ -59,7 +59,7 @@ module.exports= {
                 }
             )
             .setColor("#083c6c")
-            .setFooter("Reminder, this command is only JS.")
+            .setFooter({ text: "Reminder, this command is only JS." })
             interaction.reply({ embeds: [embed], ephemeral: true})
         } catch (error) {
             const embed = new EmbedBuilder()
@@ -73,7 +73,7 @@ module.exports= {
                 }
             )
             .setColor("#083c6c")
-            .setFooter("Reminder, this command is only JS.")
+            .setFooter({ text: "Reminder, this command is only JS." })
             interaction.reply({ embeds: [embed], ephemeral: true})
         }
     }
