@@ -24,7 +24,7 @@ module.exports = {
 
         const embed = new EmbedBuilder()
         .setAuthor({ name: `Help! 📃 `, iconURL: `${client.user.avatarURL()}`})
-        .setDescription("Click from the selections below to get a list of commands in that category!")
+        .setDescription(`Click from the selections below to get a list of commands in that category!\nThere is currently **${commands.size}** commands!`)
         .setColor("#083c6c")
 
         const options = categories.map(cat => ({

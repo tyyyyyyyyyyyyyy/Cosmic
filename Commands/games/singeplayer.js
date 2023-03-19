@@ -25,7 +25,7 @@ const {
 const ms = require("ms");
 
 module.exports = {
-    category: "games",
+    category: "Games",
     data: new SlashCommandBuilder()
         .setName("games-singleplayer")
         .setDescription("Play a single-player minigame within Discord.")

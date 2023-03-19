@@ -9,8 +9,10 @@ module.exports = {
    * @param {ChatInputCommandInteraction} interaction 
    */
   async execute(interaction, client) {
+    interaction.deferUpdate();
 
-    const embed = new EmbedBuilder()
+    try{
+      const embed = new EmbedBuilder()
     .setAuthor({ name: `Help! 📃 `, iconURL: `${client.user.avatarURL()}`})
     .setDescription(`Below is the commands for ${interaction.values[0].replace('help-','')}`)
     .setColor("#083c6c")
@@ -37,6 +39,17 @@ module.exports = {
       //   value: cmd.description
       // })
     }
-    interaction.update({ embeds: [embed] });
+    interaction.editReply({ embeds: [embed] });
+    }
+    catch (error) {
+      interaction.editReply({ embeds: [
+        new EmbedBuilder()
+        .setAuthor({ name: `Error! ❌ `, iconURL: `${client.user.avatarURL()}`})
+        .setDescription("> There was an error loading commands for this category!")
+        .addFields({ name: "Error:", value: `\`\`\`diff\n-${error}\`\`\``})
+      ]})
+    }
+
+    
   },
 };

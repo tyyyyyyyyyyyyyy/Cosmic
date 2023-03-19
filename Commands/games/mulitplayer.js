@@ -11,7 +11,7 @@ const {
 } = require('discord-gamecord');
 
 module.exports = {
-    category: "games",
+    category: "Games",
     data: new SlashCommandBuilder()
         .setName("games-multiplayer")
         .setDescription("Play a multi-player minigame within Discord.")
