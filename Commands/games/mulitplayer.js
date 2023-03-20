@@ -43,7 +43,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [
                     new EmbedBuilder()
-                        .setColor("0x2f3136")
+                    .setColor("#083c6c")
                         .setDescription(":warning: | The target specified has most likely left the server.")
                 ],
                 ephemeral: true
@@ -54,7 +54,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [
                     new EmbedBuilder()
-                        .setColor("0x2f3136")
+                    .setColor("#083c6c")
                         .setDescription(":warning: | You are not allowed to play with or against a bot.")
                 ],
                 ephemeral: true
@@ -65,7 +65,7 @@ module.exports = {
             return interaction.reply({
                 embeds: [
                     new EmbedBuilder()
-                        .setColor("0x2f3136")
+                        .setColor("#083c6c")
                         .setDescription(":warning: | You cannot play a multi-player game with yourself.")
                 ],
                 ephemeral: true
